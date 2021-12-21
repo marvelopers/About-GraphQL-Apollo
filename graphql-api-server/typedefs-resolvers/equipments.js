@@ -2,19 +2,20 @@ const { gql } = require('apollo-server')
 const dbWorks = require('../dbWorks')
 
 const typeDefs = gql`
-    type Equipment {
-        id: ID!
-        used_by: Role!
-        count: Int!
-        new_or_used: NewOrUsed!
-    }
-    type EquipmentAdv {
-        id: ID!
-        used_by: Role!
-        count: Int!
-        use_rate: Float
-        is_new: Boolean!
-    }
+  type Equipment implements Tool {
+    id: ID!
+    used_by: Role!
+    count: Int!
+    new_or_used: NewOrUsed!
+  }
+  type EquipmentAdv {
+    id: ID!
+    used_by: Role!
+    count: Int!
+    use_rate: Float
+    is_new: Boolean!
+    users: [String]
+  }
 `
 
 const resolvers = {
@@ -47,15 +48,3 @@ module.exports = {
     resolvers: resolvers
 }
 
-
-const typeDefs = gql`
-    // ...
-    type EquipmentAdv {
-        id: ID!
-        used_by: Role!
-        count: Int!
-        use_rate: Float
-        is_new: Boolean!,
-        users: [String!]
-    }
-`
