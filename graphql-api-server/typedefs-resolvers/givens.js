@@ -1,5 +1,6 @@
 const { gql } = require('apollo-server')
 const dbWorks = require('../dbWorks.js')
+
 const typeDefs = gql`
   union Given = Equipment | Supply
 `

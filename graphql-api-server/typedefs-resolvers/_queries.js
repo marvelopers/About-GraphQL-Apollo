@@ -13,7 +13,7 @@ const typeDefs = gql`
       page: Int!,
       per_page: Int!
     ): [People]
-    equipments: [Equipment]
+    equipments: [Equipment]        
     equipmentAdvs: [EquipmentAdv]
     softwares: [Software]
     software: Software
